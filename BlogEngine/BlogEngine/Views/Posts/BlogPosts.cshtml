@@ -1,0 +1,9 @@
+﻿@{ var Posts = (System.Collections.Generic.List<BlogEngine.Models.Post>)Model;}
+
+@foreach (var Post in Posts)
+{
+    <div>
+        @Post.MetaData.Title
+    </div>
+}
+
