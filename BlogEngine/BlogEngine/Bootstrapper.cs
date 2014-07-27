@@ -18,7 +18,11 @@ namespace BlogEngine
 
       container.Register<IContentProvider, FileContentProvider>(provider);
       container.Register<IMarkdownService, MarkdownService>().AsSingleton();
+      
+      
       container.Register<IPostParser, KiwiMarkdownPostParser>().AsSingleton();
+
+      StaticConfiguration.DisableErrorTraces = false;
     }
 
     protected override void ConfigureConventions(NancyConventions nancyConventions)

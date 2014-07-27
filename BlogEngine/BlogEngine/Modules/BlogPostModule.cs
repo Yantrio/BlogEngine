@@ -1,5 +1,6 @@
 ﻿using BlogEngine.Models;
 using Nancy;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -20,18 +21,18 @@ namespace BlogEngine.Modules
         });
 
         var start = (int)args.start;
-        var end = (int)args.finish;
+        var end = Math.Max((int)args.finish,files.Count());
 
         var filesWanted = files.Skip(start).Take(end - start).ToList();
 
-        return Negotiate.WithModel(filesWanted).WithView("BlogPost");
+        return View["BlogPosts", filesWanted];
 
       };
 
       Get["/{PostName}"] = args =>
       {
         var model = parser.Parse(args.PostName);
-        return Negotiate.WithModel(model).WithView("Post");
+        return Negotiate.WithModel(new { model }).WithView("Post");
       };
 
     }

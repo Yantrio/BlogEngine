@@ -1,0 +1,70 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="content/css/font-awesome.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+              <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+          <![endif]-->
+    <link href="content/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="row">
+                <!-- sidebar -->
+                <div class="column col-sm-2" id="sidebar">
+                    <a class="logo" href="#">Yantr.io</a>
+                    <ul class="nav">
+                        <li>
+                            <a href="#categories">Categories</a>
+                        </li>
+                        <li>
+                            <a href="#archive">Archive</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /sidebar -->
+                <!-- main -->
+                <div class="column col-sm-10" id="main">
+                    <div class="padding">
+                        <div class="full col-sm-9">
+                            <div class="content-destination">
+
+                            </div>
+                            <hr>
+                            <div class="row" id="footer">
+                                <div class="col-sm-6">
+                                </div>
+                                <div class="col-sm-6">
+                                    <p>
+                                        <a href="#" class="pull-right">©Copyright Inc.</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <!-- /col-9 -->
+                    </div>
+                    <!-- /padding -->
+                </div>
+                <!-- /main -->
+            </div>
+        </div>
+    </div>
+    <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="content/js/bootstrap.min.js"></script>
+    <script src="content/js/Blog.js"></script>
+</body>
+</html>

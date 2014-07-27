@@ -1,9 +1,31 @@
-﻿@{ var Posts = (System.Collections.Generic.List<BlogEngine.Models.Post>)Model;}
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<List<BlogEngine.Models.Post>>
 
-@foreach (var Post in Posts)
+@using NTimeAgo
+
+@foreach (var Post in Model)
 {
-    <div>
-        @Post.MetaData.Title
+    <div class="row">
+        <div class="col-sm-10">
+            <h2>@Post.MetaData.Title</h2>
+            <div class="blog exceprt">
+                @this.Html.Raw(Post.ExcerptAsHtml)
+            </div>
+            <h4>
+                <small class="text-muted">
+                    @NTimeAgo.DateTimeInWordExtensions.InWords(Post.MetaData.CreatedDate) • <a href="#Post/@Post.MetaData.Title" class="text-muted">Read More</a>
+            </small>
+        </h4>
+    </div>
+    <div class="col-sm-2">
+        <a href="#" class="pull-right">
+            <img src="//placehold.it/100" class="img-circle">
+        </a>
+    </div>
+</div>
+    <div class="row divider">
+        <div class="col-sm-12">
+            <hr>
+        </div>
     </div>
 }
 
