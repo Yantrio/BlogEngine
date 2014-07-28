@@ -21,7 +21,7 @@ namespace BlogEngine.Modules
         });
 
         var start = (int)args.start;
-        var end = Math.Max((int)args.finish,files.Count());
+        var end = Math.Max((int)args.finish, files.Count());
 
         var filesWanted = files.Skip(start).Take(end - start).ToList();
 
@@ -32,7 +32,7 @@ namespace BlogEngine.Modules
       Get["/{PostName}"] = args =>
       {
         var model = parser.Parse(args.PostName);
-        return Negotiate.WithModel(new { model }).WithView("Post");
+        return View["FullPost", model];
       };
 
     }

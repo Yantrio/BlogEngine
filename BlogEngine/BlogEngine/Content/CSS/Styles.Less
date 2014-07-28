@@ -1,0 +1,146 @@
+﻿html, body {
+    height: 100%;
+    font-family: "Merriweather", Georgia, serif;
+}
+
+a {
+    color: #222222;
+}
+
+.wrapper, .row {
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.wrapper:before, .wrapper:after,
+.column:before, .column:after {
+    content: "";
+    display: table;
+}
+
+.wrapper:after,
+.column:after {
+    clear: both;
+}
+
+.column {
+    height: 100%;
+    overflow: auto;
+    *zoom: 1;
+}
+
+.column {
+    height: 100%;
+    overflow: auto;
+    *zoom: 1;
+
+    .padding {
+        padding: 20px;
+    }
+}
+
+.box {
+    background-color: #2f2f2f;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.divider {
+    margin-top: 32px;
+}
+
+#main {
+    background-color: #fefefe;
+
+    .img-circle {
+        margin-top: 18px;
+        height: 70px;
+        width: 70px;
+    }
+}
+
+#sidebar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 24em;
+
+    .logo {
+        display: block;
+        color: white;
+        font-family: Merriweather, Georgia, 'Times New Roman', serif;
+        font-size: xx-large;
+        padding-bottom: 35px;
+    }
+
+    span {
+        color: white;
+        font-weight: 100;
+        font-size: small;
+        padding-top: 0px;
+    }
+
+    .icons {
+        padding-top: 20px;
+        text-align: center;
+
+        a {
+            color: #ffffff;
+            background-color: transparent;
+            margin: 0 5px;
+        }
+    }
+
+    img.me {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin: 50px auto 20px auto;
+    }
+}
+
+#footer {
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    font-family: Merriweather, Georgia, 'Times New Roman', serif;
+    font-weight: 300;
+}
+
+.label-default {
+    background-color: #dddddd;
+}
+
+.page-header {
+    margin-top: 55px;
+    padding-top: 9px;
+    border-top: 1px solid #eeeeee;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.col-sm-9.full {
+    width: 100%;
+}
+
+small.text-muted {
+    font-family: courier,courier-new,monospace;
+}

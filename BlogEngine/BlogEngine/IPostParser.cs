@@ -2,6 +2,7 @@
 using Kiwi.Markdown;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -28,6 +29,7 @@ namespace BlogEngine
       var temp = contentProvider.GetContent(fileName);
 
       var p = new Post();
+      p.PostName = Path.GetFileNameWithoutExtension(fileName);
 
       var settingsString = GetSettingsString(temp);
       p.MetaData = GetMetaData(settingsString);

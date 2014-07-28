@@ -1,0 +1,23 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<BlogEngine.Models.Post>
+
+@using NTimeAgo
+
+<div class="row">
+    <div class="col-sm-10">
+        <h2>@Model.MetaData.Title</h2>
+        <h4>
+            <small class="text-muted">
+                @NTimeAgo.DateTimeInWordExtensions.InWords(Model.MetaData.CreatedDate) • @Model.MetaData.Author
+            </small>
+        </h4>
+        <div class="post">
+            @this.Html.Raw(Model.BodyAsHtml)
+        </div>
+
+    </div>
+    <div class="col-sm-2">
+        <a href="#" class="pull-right">
+            <img src="//placehold.it/100" class="img-circle">
+        </a>
+    </div>
+</div>

@@ -1,118 +1,129 @@
-/* custom template */
-html, body {
-    height: 100%;
-    font-family: "Merriweather", Georgia, serif;
+﻿html,
+body {
+  height: 100%;
+  font-family: "Merriweather", Georgia, serif;
 }
-
 a {
-    color: #222222;
+  color: #222222;
 }
-
-.wrapper, .row {
-    height: 100%;
-    margin-left: 0;
-    margin-right: 0;
+.wrapper,
+.row {
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
-
-    .wrapper:before, .wrapper:after,
-    .column:before, .column:after {
-        content: "";
-        display: table;
-    }
-
-    .wrapper:after,
-    .column:after {
-        clear: both;
-    }
-
+.wrapper:before,
+.wrapper:after,
+.column:before,
+.column:after {
+  content: "";
+  display: table;
+}
+.wrapper:after,
+.column:after {
+  clear: both;
+}
 .column {
-    height: 100%;
-    overflow: auto;
-    *zoom: 1;
+  height: 100%;
+  overflow: auto;
+  *zoom: 1;
 }
-
-    .column .padding {
-        padding: 20px;
-    }
-
+.column {
+  height: 100%;
+  overflow: auto;
+  *zoom: 1;
+}
+.column .padding {
+  padding: 20px;
+}
 .box {
-    bottom: 0; /* increase for footer use */
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: #42607a;
-    /*     background-image:url('/images/1500x500.png');
-background-size:cover;
-background-attachment:fixed; */
+  background-color: #2f2f2f;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
-
 .divider {
-    margin-top: 32px;
+  margin-top: 32px;
 }
-
 #main {
-    background-color: #fefefe;
+  background-color: #fefefe;
 }
-
-    #main .img-circle {
-        margin-top: 18px;
-        height: 70px;
-        width: 70px;
-    }
-
-#sidebar, #sidebar a {
-    color: #ffffff;
-    background-color: transparent;
-    font-weight: 200;
+#main .img-circle {
+  margin-top: 18px;
+  height: 70px;
+  width: 70px;
 }
-
-    #sidebar a.logo {
-        display: block;
-        color: white;
-        height: 40px;
-        width: 40px;
-        margin: 15px;
-        font-family: Merriweather, Georgia, 'Times New Roman', serif;
-        font-weight: 300;
-        font-size: x-large;
-    }
-
-#sidebar-footer {
-    position: absolute;
-    bottom: 5px;
+#sidebar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 24em;
 }
-
+#sidebar .logo {
+  display: block;
+  color: white;
+  font-family: Merriweather, Georgia, 'Times New Roman', serif;
+  font-size: xx-large;
+  padding-bottom: 35px;
+}
+#sidebar span {
+  color: white;
+  font-weight: 100;
+  font-size: small;
+  padding-top: 0px;
+}
+#sidebar .icons {
+  padding-top: 20px;
+  text-align: center;
+}
+#sidebar .icons a {
+  color: #ffffff;
+  background-color: transparent;
+  margin: 0 5px;
+}
+#sidebar img.me {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 50px auto 20px auto;
+}
 #footer {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-
-
-
-/* bootstrap overrides */
-
-h1, h2, h3 {
-    font-family: Merriweather, Georgia, 'Times New Roman', serif;
-    font-weight: 300;
+h1,
+h2,
+h3 {
+  font-family: Merriweather, Georgia, 'Times New Roman', serif;
+  font-weight: 300;
 }
-
 .label-default {
-    background-color: #dddddd;
+  background-color: #dddddd;
 }
-
 .page-header {
-    margin-top: 55px;
-    padding-top: 9px;
-    border-top: 1px solid #eeeeee;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  margin-top: 55px;
+  padding-top: 9px;
+  border-top: 1px solid #eeeeee;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
-
 .col-sm-9.full {
-    width: 100%;
+  width: 100%;
 }
-
 small.text-muted {
-    font-family: courier,courier-new,monospace;
+  font-family: courier, courier-new, monospace;
 }

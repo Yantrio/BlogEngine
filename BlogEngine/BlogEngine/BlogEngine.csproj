@@ -91,9 +91,16 @@
   <ItemGroup>
     <Content Include="Content\CSS\bootstrap.min.css" />
     <Content Include="Content\CSS\font-awesome.css" />
-    <Content Include="Content\CSS\styles.css" />
+    <Content Include="Content\CSS\Styles.css">
+      <DependentUpon>Styles.Less</DependentUpon>
+    </Content>
+    <Content Include="Content\CSS\Styles.min.css">
+      <DependentUpon>Styles.css</DependentUpon>
+    </Content>
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Images\me.jpeg" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\sammy.min.js" />
     <Content Include="packages.config" />
     <Content Include="Content\Posts\MarkDownTest.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -104,7 +111,9 @@
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\CSS\Styles.Less" />
     <None Include="Properties\PublishProfiles\yantr-io.pubxml" />
+    <Content Include="Views\Posts\FullPost.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,6 +136,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="Content\js\Blog.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\sammyjs\sammyjs.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Posts\Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
