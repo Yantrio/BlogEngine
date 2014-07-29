@@ -91,6 +91,7 @@
   <ItemGroup>
     <Content Include="Content\CSS\bootstrap.min.css" />
     <Content Include="Content\CSS\font-awesome.css" />
+    <Content Include="Content\CSS\nprogress.css" />
     <Content Include="Content\CSS\Styles.css">
       <DependentUpon>Styles.Less</DependentUpon>
     </Content>
@@ -100,6 +101,8 @@
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Images\me.jpeg" />
     <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\jquery.loadingbar.min.js" />
+    <Content Include="Content\js\nprogress.js" />
     <Content Include="Content\js\sammy.min.js" />
     <Content Include="packages.config" />
     <Content Include="Content\Posts\MarkDownTest.md">
@@ -134,8 +137,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Content\js\AjaxHandler.ts" />
     <TypeScriptCompile Include="Content\js\Blog.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\nprogress\NProgress.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\sammyjs\sammyjs.d.ts" />
   </ItemGroup>
   <ItemGroup>

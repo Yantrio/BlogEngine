@@ -1,8 +1,11 @@
 ﻿module Blog {
     export class Blog {
         public Destination: JQuery;
+
+        public Handler: Ajax.AjaxHandler;
         public constructor() {
             this.Destination = $(".content-destination");
+            this.Handler = new Ajax.AjaxHandler();
             this.SetUpRoutes();
         }
 
@@ -19,14 +22,14 @@
         }
 
         public LoadInitialPosts(): void {
-            $.ajax({ url: "/Posts/0/10" }).done((data) => {
+            this.Handler.AjaxCall("/Posts/0/10", 'GET').done((data) => {
                 this.Destination.empty();
                 this.Destination.append(data);
             });
         }
 
         public LoadPost(name: string): void {
-            $.ajax({ url: "/Posts/" + name }).done((data) => {
+            this.Handler.AjaxCall("/Posts/" + name, 'GET').done((data) => {
                 this.Destination.empty();
                 this.Destination.append(data);
             });

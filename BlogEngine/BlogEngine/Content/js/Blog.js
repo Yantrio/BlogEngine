@@ -3,6 +3,7 @@
     var Blog = (function () {
         function Blog() {
             this.Destination = $(".content-destination");
+            this.Handler = new Ajax.AjaxHandler();
             this.SetUpRoutes();
         }
         Blog.prototype.SetUpRoutes = function () {
@@ -20,7 +21,7 @@
 
         Blog.prototype.LoadInitialPosts = function () {
             var _this = this;
-            $.ajax({ url: "/Posts/0/10" }).done(function (data) {
+            this.Handler.AjaxCall("/Posts/0/10", 'GET').done(function (data) {
                 _this.Destination.empty();
                 _this.Destination.append(data);
             });
@@ -28,7 +29,7 @@
 
         Blog.prototype.LoadPost = function (name) {
             var _this = this;
-            $.ajax({ url: "/Posts/" + name }).done(function (data) {
+            this.Handler.AjaxCall("/Posts/" + name, 'GET').done(function (data) {
                 _this.Destination.empty();
                 _this.Destination.append(data);
             });

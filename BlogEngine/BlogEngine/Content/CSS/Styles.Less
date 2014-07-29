@@ -144,3 +144,16 @@ h1, h2, h3 {
 small.text-muted {
     font-family: courier,courier-new,monospace;
 }
+
+#loader {
+    opacity: 0.01;
+    transition: opacity 0.1s ease-in;
+}
+ 
+#loader.active {
+    opacity: 1;
+}
+ 
+#loader.active .bar {
+    transition: width 0.2s;
+}
