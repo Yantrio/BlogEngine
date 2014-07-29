@@ -1,42 +1,41 @@
-﻿module Blog {
-    export class Blog {
-        public Destination: JQuery;
+﻿///<amd require
+import AjaxHandler = require("AjaxHandler");
 
-        public Handler: Ajax.AjaxHandler;
-        public constructor() {
-            this.Destination = $(".content-destination");
-            this.Handler = new Ajax.AjaxHandler();
-            this.SetUpRoutes();
-        }
+class Blog {
+    public Destination: JQuery;
+    public Handler: AjaxHandler;
 
-        public SetUpRoutes(): void {
-            var app: Sammy.Application = Sammy(".wrapper");
-            app.get('/', () => {
-                this.LoadInitialPosts();
-            });
+    public constructor() {
+        this.Destination = $(".content-destination");
+        this.Handler = new AjaxHandler();
+        this.SetUpRoutes();
+    }
 
-            app.get("/#Post/:PostName", (ctx: Sammy.EventContext) => {
-                this.LoadPost(ctx.params.PostName);
-            });
-            app.run('/#');
-        }
+    public SetUpRoutes(): void {
+        var app: Sammy.Application = Sammy(".wrapper");
+        app.get('/', () => {
+            this.LoadInitialPosts();
+        });
 
-        public LoadInitialPosts(): void {
-            this.Handler.AjaxCall("/Posts/0/10", 'GET').done((data) => {
-                this.Destination.empty();
-                this.Destination.append(data);
-            });
-        }
+        app.get("/#Post/:PostName", (ctx: Sammy.EventContext) => {
+            this.LoadPost(ctx.params.PostName);
+        });
+        app.run('/#');
+    }
 
-        public LoadPost(name: string): void {
-            this.Handler.AjaxCall("/Posts/" + name, 'GET').done((data) => {
-                this.Destination.empty();
-                this.Destination.append(data);
-            });
-        }
+    public LoadInitialPosts(): void {
+        this.Handler.AjaxCall("/Posts/0/10", 'GET').done((data) => {
+            this.Destination.empty();
+            this.Destination.append(data);
+        });
+    }
+
+    public LoadPost(name: string): void {
+        this.Handler.AjaxCall("/Posts/" + name, 'GET').done((data) => {
+            this.Destination.empty();
+            this.Destination.append(data);
+        });
     }
 }
 
-$(() => {
-    var handler = new Blog.Blog();
-});
+export = Blog;

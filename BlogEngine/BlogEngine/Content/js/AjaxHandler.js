@@ -1,5 +1,4 @@
-﻿var Ajax;
-(function (Ajax) {
+﻿define(["require", "exports"], function(require, exports) {
     var AjaxHandler = (function () {
         function AjaxHandler() {
         }
@@ -36,6 +35,8 @@
         };
         return AjaxHandler;
     })();
-    Ajax.AjaxHandler = AjaxHandler;
-})(Ajax || (Ajax = {}));
+
+    
+    return AjaxHandler;
+});
 //# sourceMappingURL=AjaxHandler.js.map

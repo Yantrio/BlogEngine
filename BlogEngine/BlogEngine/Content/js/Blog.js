@@ -1,9 +1,8 @@
-﻿var Blog;
-(function (_Blog) {
+﻿define(["require", "exports", "AjaxHandler"], function(require, exports, AjaxHandler) {
     var Blog = (function () {
         function Blog() {
             this.Destination = $(".content-destination");
-            this.Handler = new Ajax.AjaxHandler();
+            this.Handler = new AjaxHandler();
             this.SetUpRoutes();
         }
         Blog.prototype.SetUpRoutes = function () {
@@ -36,10 +35,8 @@
         };
         return Blog;
     })();
-    _Blog.Blog = Blog;
-})(Blog || (Blog = {}));
 
-$(function () {
-    var handler = new Blog.Blog();
+    
+    return Blog;
 });
 //# sourceMappingURL=Blog.js.map
