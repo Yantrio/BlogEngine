@@ -35,7 +35,6 @@
         };
         return AjaxHandler;
     })();
-
     
     return AjaxHandler;
 });

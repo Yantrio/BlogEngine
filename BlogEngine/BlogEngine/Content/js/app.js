@@ -5,4 +5,4 @@
         blog.LoadInitialPosts();
     });
 });
-//# sourceMappingURL=AppConfig.js.map
+//# sourceMappingURL=app.js.map

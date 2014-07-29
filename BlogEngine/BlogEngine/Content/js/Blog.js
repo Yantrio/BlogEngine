@@ -1,4 +1,4 @@
-﻿define(["require", "exports", "AjaxHandler"], function(require, exports, AjaxHandler) {
+﻿define(["require", "exports", "./AjaxHandler", "./page"], function(require, exports, AjaxHandler, Page) {
     var Blog = (function () {
         function Blog() {
             this.Destination = $(".content-destination");
@@ -6,16 +6,10 @@
             this.SetUpRoutes();
         }
         Blog.prototype.SetUpRoutes = function () {
-            var _this = this;
-            var app = Sammy(".wrapper");
-            app.get('/', function () {
-                _this.LoadInitialPosts();
+            Page('*', function (ctx) {
+                var url = ctx.url;
             });
-
-            app.get("/#Post/:PostName", function (ctx) {
-                _this.LoadPost(ctx.params.PostName);
-            });
-            app.run('/#');
+            Page.start();
         };
 
         Blog.prototype.LoadInitialPosts = function () {

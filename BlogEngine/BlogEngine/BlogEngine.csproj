@@ -106,6 +106,7 @@
     </Content>
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Images\me.jpeg" />
+    <Content Include="Content\js\sammy.js" />
     <Content Include="packages.config" />
     <Content Include="Content\Posts\MarkDownTest.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -140,15 +141,17 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Content\js\AjaxHandler.ts" />
-    <TypeScriptCompile Include="Content\js\AppConfig.ts" />
+    <TypeScriptCompile Include="Content\js\app.ts" />
     <TypeScriptCompile Include="Content\js\Blog.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\nprogress\NProgress.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\sammyjs\sammyjs.d.ts" />
+    <TypeScriptCompile Include="Content\js\Config.ts" />
+    <TypeScriptCompile Include="Content\js\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Content\js\typings\nprogress\NProgress.d.ts" />
+    <TypeScriptCompile Include="Content\js\typings\requirejs\require.d.ts" />
+    <TypeScriptCompile Include="Content\js\typings\sammyjs\sammyjs.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Posts\Images\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

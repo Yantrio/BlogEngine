@@ -1,10 +1,10 @@
-﻿///<amd require
-import AjaxHandler = require("AjaxHandler");
+﻿/// <reference path="page.d.ts" />
+import AjaxHandler = require("./AjaxHandler");
+import Page = require("./page");
 
 class Blog {
     public Destination: JQuery;
     public Handler: AjaxHandler;
-
     public constructor() {
         this.Destination = $(".content-destination");
         this.Handler = new AjaxHandler();
@@ -12,15 +12,10 @@ class Blog {
     }
 
     public SetUpRoutes(): void {
-        var app: Sammy.Application = Sammy(".wrapper");
-        app.get('/', () => {
-            this.LoadInitialPosts();
+        Page('*', function (ctx) {
+            var url = ctx.url;
         });
-
-        app.get("/#Post/:PostName", (ctx: Sammy.EventContext) => {
-            this.LoadPost(ctx.params.PostName);
-        });
-        app.run('/#');
+        Page.start();
     }
 
     public LoadInitialPosts(): void {
