@@ -106,7 +106,7 @@
     </Content>
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Images\me.jpeg" />
-    <Content Include="Content\js\sammy.js" />
+    <Content Include="Content\js\page.js" />
     <Content Include="packages.config" />
     <Content Include="Content\Posts\MarkDownTest.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -142,12 +142,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="Content\js\AjaxHandler.ts" />
     <TypeScriptCompile Include="Content\js\app.ts" />
-    <TypeScriptCompile Include="Content\js\Blog.ts" />
     <TypeScriptCompile Include="Content\js\Config.ts" />
-    <TypeScriptCompile Include="Content\js\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="Content\js\typings\nprogress\NProgress.d.ts" />
-    <TypeScriptCompile Include="Content\js\typings\requirejs\require.d.ts" />
-    <TypeScriptCompile Include="Content\js\typings\sammyjs\sammyjs.d.ts" />
+    <TypeScriptCompile Include="Content\js\NProgress.d.ts" />
+    <TypeScriptCompile Include="Content\js\Page.d.ts" />
+    <TypeScriptCompile Include="Content\js\require.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Posts\Images\" />
@@ -160,6 +158,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptModuleKind>amd</TypeScriptModuleKind>
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

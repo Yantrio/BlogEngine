@@ -103,3 +103,8 @@ interface NProgressConfigureOptions {
 }
 
 declare var NProgress: NProgressStatic;
+
+
+declare module "nprogress" {
+    export = NProgress;
+}

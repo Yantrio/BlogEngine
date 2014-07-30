@@ -1,9 +1,21 @@
-﻿/// <reference path="typings/jquery/jquery.d.ts" />
-import ajaxHandler = require("AjaxHandler");
-import blogHandler = require("Blog");
+﻿import AjaxHandler = require("AjaxHandler");
+import Page = require("page");
 
-require(["nprogress", "jquery", "sammy"], () => {
-    // code from window.onload
-    var blog = new blogHandler();
-    blog.LoadInitialPosts();
+var Handler: AjaxHandler = new AjaxHandler();
+var destination = document.getElementById("content-destination");
+
+Page("/", (ctx) => {
+    Handler.AjaxCall("/Posts/0/10", 'GET', (data) => {
+        destination.innerHTML = data.response;
+    });
+});
+Page("/Post/:PostName", (ctx) => {
+    Handler.AjaxCall("/Posts/" + ctx.params.PostName, 'GET', (data) => {
+        destination.innerHTML = data.response;
+    });
+});
+Page.start({
+    click: true,
+    popstate: true,
+    dispatch: true
 });

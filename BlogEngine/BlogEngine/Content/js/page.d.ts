@@ -1,20 +1,30 @@
-﻿interface Page {
-    (path: string, ctx: any);
-    start() : void;
+﻿interface IPage {
+    (url: string, callback: (ctx: IContext) => void);
+    base(baseUrl: string);
+    start(settings?: IPageSettings);
+    stop();
+    show(url: string);
 }
 
-interface Context {
-    save;
-    canonicalPath;
-    path;
-    querystring;
-    pathname;
-    state;
-    title;
+interface IPageSettings {
+    click: boolean;
+    popstate: boolean;
+    dispatch: boolean;
 }
 
-declare var page: Page;
+interface IContext {
+    save();
+    canonicalPath: string;
+    path: string;
+    querystring: string;
+    pathname: string;
+    state: any;
+    title: string;
+    params: any;
+}
+
+declare var Page: IPage;
 
 declare module "page" {
-    export = page;
+    export = Page;
 }
