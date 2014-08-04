@@ -6,37 +6,38 @@ using System.Linq;
 
 namespace BlogEngine.Modules
 {
-  public class BlogPostModule : NancyModule
-  {
-    public BlogPostModule(IPostParser parser, IRootPathProvider provider)
-      : base("/Posts")
+    public class BlogPostModule : NancyModule
     {
-      Get["/{start:int}/{finish:int}"] = args =>
-      {
-        var path = Path.Combine(provider.GetRootPath(), "Content\\Posts");
-
-        var files = Directory.GetFiles(path).Select(filename =>
+        public BlogPostModule(IPostParser parser, IRootPathProvider provider)
+            : base("/Posts")
         {
-          return parser.Parse(Path.GetFileNameWithoutExtension(filename));
-        });
+            Post["/{start:int}/{finish:int}"] = args =>
+              {
+                  var path = Path.Combine(provider.GetRootPath(), "Content\\Posts");
 
-        var start = (int)args.start;
-        var end = Math.Max((int)args.finish, files.Count());
+                  var files = Directory.GetFiles(path).Select(filename =>
+                  {
+                      return parser.Parse(Path.GetFileNameWithoutExtension(filename));
+                  });
 
-        var filesWanted = files.Skip(start).Take(end - start).ToList();
+                  var start = (int)args.start;
+                  var end = Math.Max((int)args.finish, files.Count());
 
-        return View["BlogPosts", filesWanted];
+                  var filesWanted = files.Skip(start).Take(end - start).ToList();
 
-      };
+                  return View["BlogPosts", filesWanted];
+              };
 
-      Get["/{PostName}"] = args =>
-      {
-        var model = parser.Parse(args.PostName);
-        return View["FullPost", model];
-      };
+            Post["/{PostName}"] = args =>
+            {
+                var model = parser.Parse(args.PostName);
+                return View["FullPost", model];
+            };
 
+            Get["/{path}"] = args =>
+            {
+                return View["Views/Index.cshtml", (string)args.path];
+            };
+        }
     }
-
-
-  }
 }

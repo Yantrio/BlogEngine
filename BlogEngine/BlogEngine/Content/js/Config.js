@@ -1,4 +1,4 @@
-﻿require.config({
+require.config({
     deps: ["./app"],
     appDir: ".",
     baseUrl: "/Content/js/",
@@ -11,6 +11,6 @@
     shim: {
         /* Set bootstrap dependencies (just jQuery) */
         'bootstrap': ['jquery'],
-        'nprogress': ['jquery'],
+        'nprogress': ['jquery']
     }
-}); 
+});

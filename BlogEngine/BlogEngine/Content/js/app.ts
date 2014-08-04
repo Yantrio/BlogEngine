@@ -5,15 +5,23 @@ var Handler: AjaxHandler = new AjaxHandler();
 var destination = document.getElementById("content-destination");
 
 Page("/", (ctx) => {
-    Handler.AjaxCall("/Posts/0/10", 'GET', (data) => {
+
+    //get header
+    
+    Handler.AjaxCall("/Posts/0/10", 'POST', (data) => {
         destination.innerHTML = data.response;
     });
 });
-Page("/Post/:PostName", (ctx) => {
-    Handler.AjaxCall("/Posts/" + ctx.params.PostName, 'GET', (data) => {
+Page("/Posts/:PostName", (ctx) => {
+    Handler.AjaxCall("/Posts/" + ctx.params.PostName, 'POST', (data) => {
         destination.innerHTML = data.response;
     });
 });
+
+Page("*", (ctx) => {
+    location.href = "/";
+});
+
 Page.start({
     click: true,
     popstate: true,

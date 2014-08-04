@@ -1,4 +1,4 @@
-﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<string>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,17 +6,17 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>Blog</title>
-    <script data-main="Content/js/config" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.js" async>
+    <script data-main="@this.ResolveUrl("~/Content/js/config")" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.js" async>
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="content/css/bootstrap.min.css" rel="stylesheet">
-    <link href="content/css/font-awesome.css" rel="stylesheet">
+    <link href="~/content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/content/css/font-awesome.css" rel="stylesheet">
     <link href="~/Content/CSS/nprogress.css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="content/css/styles.css" rel="stylesheet">
+    <link href="~/content/css/styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
