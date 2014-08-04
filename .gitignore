@@ -185,7 +185,8 @@ FakesAssemblies/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -212,7 +213,10 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-*.chk
+
+
 *.chk
 *.jrs
 *.ide
+*.sln.ide/
+PublishProfiles/
