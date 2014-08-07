@@ -2,8 +2,9 @@ define(["require", "exports", "nprogress"], function(require, exports, NProgress
     var AjaxHandler = (function () {
         function AjaxHandler() {
         }
-        AjaxHandler.prototype.AjaxCall = function (url, ajaxType, Done) {
+        AjaxHandler.prototype.AjaxCall = function (url, contentType, ajaxType, Done) {
             var xhr = new XMLHttpRequest();
+
             xhr.upload.addEventListener("progress", function (evt) {
                 if (evt.lengthComputable) {
                     var percentComplete = evt.loaded / evt.total;
@@ -33,6 +34,7 @@ define(["require", "exports", "nprogress"], function(require, exports, NProgress
 
             NProgress.start();
             xhr.open(ajaxType, url, true);
+            xhr.setRequestHeader("Accept", contentType);
             xhr.send(null);
         };
         return AjaxHandler;

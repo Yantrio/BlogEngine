@@ -1,8 +1,9 @@
 ﻿import NProgress = require("nprogress");
 
 class AjaxHandler {
-    public AjaxCall(url: string, ajaxType: string, Done: (request: XMLHttpRequest) => void){
+    public AjaxCall(url: string, contentType: string, ajaxType: string, Done: (request: XMLHttpRequest) => void){
         var xhr = new XMLHttpRequest();
+
         xhr.upload.addEventListener("progress", (evt) => {
             if (evt.lengthComputable) {
                 var percentComplete = evt.loaded / evt.total;
@@ -32,6 +33,7 @@ class AjaxHandler {
 
         NProgress.start();
         xhr.open(ajaxType, url, true);
+        xhr.setRequestHeader("Accept", contentType);
         xhr.send(null);
     }
 }

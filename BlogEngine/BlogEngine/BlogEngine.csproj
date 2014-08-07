@@ -134,6 +134,7 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="Content\CSS\Styles.Less" />
+    <Content Include="Content\Posts\TestPost2.md" />
     <None Include="Properties\PublishProfiles\yantr-io %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\yantr-io.pubxml" />
     <Content Include="Views\Posts\FullPost.cshtml" />

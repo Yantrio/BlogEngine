@@ -25,13 +25,14 @@ namespace BlogEngine.Modules
 
                   var filesWanted = files.Skip(start).Take(end - start).ToList();
 
-                  return View["BlogPosts", filesWanted];
+                  return Negotiate.WithModel(filesWanted).WithView("BlogPosts");
               };
 
             Post["/{PostName}"] = args =>
             {
-                var model = parser.Parse(args.PostName);
-                return View["FullPost", model];
+                Post model = parser.Parse(args.PostName);
+                return Negotiate.WithModel(model).WithView("FullPost").WithHeader("blog-title", model.MetaData.Title);
+                //return View["FullPost", model];
             };
 
             Get["/{path}"] = args =>

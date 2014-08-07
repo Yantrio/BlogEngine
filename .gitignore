@@ -218,5 +218,8 @@ $RECYCLE.BIN/
 *.chk
 *.jrs
 *.ide
+
+*.js.map
+*.d.ts
 *.sln.ide/
 PublishProfiles/
