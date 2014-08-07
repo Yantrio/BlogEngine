@@ -12,9 +12,14 @@ gulp.task('scripts', function () {
             noExternalResolve: true,
             module: 'AMD'
         }));
-    tsResult.js.pipe(gulp.dest('./Content/js'));
+    return tsResult.js.pipe(gulp.dest('./Content/js'));
 });
 
 gulp.task('watch', function () {
     gulp.watch(tsSources, ['scripts']);
+});
+
+
+gulp.task('default', function () {
+    gulp.start('watch');
 });

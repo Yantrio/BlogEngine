@@ -28,11 +28,6 @@ a {
   overflow: auto;
   *zoom: 1;
 }
-.column {
-  height: 100%;
-  overflow: auto;
-  *zoom: 1;
-}
 .column .padding {
   padding: 20px;
 }
@@ -129,11 +124,17 @@ small.text-muted {
 }
 #loader {
   opacity: 0.01;
+  -moz-transition: opacity 0.1s ease-in;
+  -o-transition: opacity 0.1s ease-in;
+  -webkit-transition: opacity 0.1s ease-in;
   transition: opacity 0.1s ease-in;
 }
 #loader.active {
   opacity: 1;
 }
 #loader.active .bar {
+  -moz-transition: width 0.2s;
+  -o-transition: width 0.2s;
+  -webkit-transition: width 0.2s;
   transition: width 0.2s;
 }
