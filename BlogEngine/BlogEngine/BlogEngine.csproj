@@ -165,6 +165,7 @@
     <TypeScriptCompile Include="Content\js\AjaxHandler.ts" />
     <TypeScriptCompile Include="Content\js\app.ts" />
     <TypeScriptCompile Include="Content\js\Config.ts" />
+    <TypeScriptCompile Include="Content\js\jquery.d.ts" />
     <TypeScriptCompile Include="Content\js\NProgress.d.ts" />
     <TypeScriptCompile Include="Content\js\page.d.ts" />
     <TypeScriptCompile Include="Content\js\require.d.ts" />

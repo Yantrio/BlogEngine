@@ -1,10 +1,11 @@
 ﻿import AjaxHandler = require("AjaxHandler");
 import Page = require("page");
+import JQuery = require("jquery");
 
 declare var DISQUS: any;
 declare var DISQUSWIDGETS: any;
 
-function ReloadDisqus(url : string): void {
+function ReloadDisqus(url: string): void {
     DISQUS.reset({
         reload: true,
         config: function () {
@@ -14,15 +15,15 @@ function ReloadDisqus(url : string): void {
 };
 
 function ReloadDisqusCommentCount(): void {
-        DISQUSWIDGETS.forum = 'yantrio';
-        DISQUSWIDGETS.getCount()
+    DISQUSWIDGETS = undefined;
+    $.getScript("http://yantrio.disqus.com/count.js");
 }
 
 var Handler: AjaxHandler = new AjaxHandler();
 var destination = document.getElementById("content-destination");
 
 Page("/", (ctx) => {
-    Handler.AjaxCall("/Posts/0/10",'text/html', 'POST', (response) => {
+    Handler.AjaxCall("/Posts/0/10", 'text/html', 'POST', (response) => {
         destination.innerHTML = response.response;
         document.title = "Yantr.io";
         ReloadDisqusCommentCount();
@@ -30,7 +31,7 @@ Page("/", (ctx) => {
     });
 });
 Page("/Posts/:PostName", (ctx) => {
-    Handler.AjaxCall("/Posts/" + ctx.params.PostName, 'text/html',  'POST', (response) => {
+    Handler.AjaxCall("/Posts/" + ctx.params.PostName, 'text/html', 'POST', (response) => {
         destination.innerHTML = response.response;
         document.title = response.getResponseHeader("blog-title");
         ReloadDisqus(window.location.href);

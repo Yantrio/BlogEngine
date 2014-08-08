@@ -10,8 +10,8 @@ define(["require", "exports", "AjaxHandler", "page"], function(require, exports,
     ;
 
     function ReloadDisqusCommentCount() {
-        DISQUSWIDGETS.forum = 'yantrio';
-        DISQUSWIDGETS.getCount();
+        DISQUSWIDGETS = undefined;
+        $.getScript("http://yantrio.disqus.com/count.js");
     }
 
     var Handler = new AjaxHandler();
