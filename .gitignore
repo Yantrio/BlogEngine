@@ -220,6 +220,5 @@ $RECYCLE.BIN/
 *.ide
 
 *.js.map
-*.d.ts
 *.sln.ide/
 PublishProfiles/
