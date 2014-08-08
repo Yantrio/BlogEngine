@@ -8,6 +8,12 @@ define(["require", "exports", "AjaxHandler", "page"], function(require, exports,
         });
     }
     ;
+
+    function ReloadDisqusCommentCount() {
+        DISQUSWIDGETS.forum = 'yantrio';
+        DISQUSWIDGETS.getCount();
+    }
+
     var Handler = new AjaxHandler();
     var destination = document.getElementById("content-destination");
 
@@ -15,13 +21,13 @@ define(["require", "exports", "AjaxHandler", "page"], function(require, exports,
         Handler.AjaxCall("/Posts/0/10", 'text/html', 'POST', function (response) {
             destination.innerHTML = response.response;
             document.title = "Yantr.io";
+            ReloadDisqusCommentCount();
         });
     });
     Page("/Posts/:PostName", function (ctx) {
         Handler.AjaxCall("/Posts/" + ctx.params.PostName, 'text/html', 'POST', function (response) {
             destination.innerHTML = response.response;
             document.title = response.getResponseHeader("blog-title");
-
             ReloadDisqus(window.location.href);
         });
     });

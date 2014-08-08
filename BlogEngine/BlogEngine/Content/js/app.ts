@@ -2,6 +2,7 @@
 import Page = require("page");
 
 declare var DISQUS: any;
+declare var DISQUSWIDGETS: any;
 
 function ReloadDisqus(url : string): void {
     DISQUS.reset({
@@ -11,6 +12,12 @@ function ReloadDisqus(url : string): void {
         }
     });
 };
+
+function ReloadDisqusCommentCount(): void {
+        DISQUSWIDGETS.forum = 'yantrio';
+        DISQUSWIDGETS.getCount()
+}
+
 var Handler: AjaxHandler = new AjaxHandler();
 var destination = document.getElementById("content-destination");
 
@@ -18,13 +25,14 @@ Page("/", (ctx) => {
     Handler.AjaxCall("/Posts/0/10",'text/html', 'POST', (response) => {
         destination.innerHTML = response.response;
         document.title = "Yantr.io";
+        ReloadDisqusCommentCount();
+
     });
 });
 Page("/Posts/:PostName", (ctx) => {
     Handler.AjaxCall("/Posts/" + ctx.params.PostName, 'text/html',  'POST', (response) => {
         destination.innerHTML = response.response;
         document.title = response.getResponseHeader("blog-title");
-
         ReloadDisqus(window.location.href);
     });
 
