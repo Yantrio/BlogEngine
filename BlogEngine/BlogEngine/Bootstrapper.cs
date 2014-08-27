@@ -40,7 +40,7 @@ namespace BlogEngine
     {
       nancyConventions.StaticContentsConventions.AddDirectory("Scripts");
       nancyConventions.StaticContentsConventions.AddDirectory("Views/Templates");
-      nancyConventions.StaticContentsConventions.AddDirectory("/_Nancy/Resources");
+      nancyConventions.StaticContentsConventions.AddDirectory("_Nancy/Resources");
       base.ConfigureConventions(nancyConventions);
     }
 
@@ -51,8 +51,8 @@ namespace BlogEngine
       pipelines.AfterRequest.AddItemToEndOfPipeline((ctx) =>
       {
         ctx.Response.WithHeader("Access-Control-Allow-Origin", "*")
-                        .WithHeader("Access-Control-Allow-Methods", "POST,GET")
-                        .WithHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-type");
+                    .WithHeader("Access-Control-Allow-Methods", "POST,GET")
+                    .WithHeader("Access-Control-Allow-Headers", "Accept, Origin, Content-type");
 
       });
     }
