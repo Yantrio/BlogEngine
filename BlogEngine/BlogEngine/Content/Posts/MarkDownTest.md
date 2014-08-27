@@ -2,7 +2,7 @@
 author: James Humphries
 categories: testing
 title: Test Title! 
-created: 25/07/2014
+created: 25/07/2014 07:00:00 GMT
 ---
 ---excerpt
 Click Read more to see code hightlighting in action
