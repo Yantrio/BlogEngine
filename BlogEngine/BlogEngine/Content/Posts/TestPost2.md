@@ -1,11 +1,11 @@
 ﻿---
 author: James Humphries
 categories: testing2
-title: Test Title! 
+title: Post Number 2
 created: 25/07/2014
 ---
 ---excerpt
-Click Read more to see code hightlighting in action
+Post Number 2 snippet
 ---end
 
 ```csharp

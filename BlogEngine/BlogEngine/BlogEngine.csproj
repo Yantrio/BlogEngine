@@ -21,7 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
-    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.1</TypeScriptToolsVersion>
     <NuGetPackageImportStamp>7298fe95</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -152,12 +152,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="IPostParser.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostMetaData.cs" />
     <Compile Include="Modules\BlogPostModule.cs" />
     <Compile Include="Modules\HomeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IPostParser.cs" />
+    <Compile Include="Services\KiwiMarkdownPostParser.cs" />
+    <Compile Include="Services\PostProvider.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

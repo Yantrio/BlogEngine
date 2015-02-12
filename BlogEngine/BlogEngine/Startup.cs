@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Microsoft.Owin;
 using Microsoft.Owin.Extensions;
@@ -13,7 +13,6 @@ namespace BlogEngine
   {
     public void Configuration(IAppBuilder app)
     {
-
       app.UseNancy();
       app.UseStageMarker(PipelineStage.MapHandler);
     }

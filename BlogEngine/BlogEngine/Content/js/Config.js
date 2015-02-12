@@ -11,6 +11,7 @@ require.config({
     shim: {
         /* Set bootstrap dependencies (just jQuery) */
         'bootstrap': ['jquery'],
-        'nprogress': ['jquery']
+        'nprogress': ['jquery'],
     }
 });
+//# sourceMappingURL=Config.js.map

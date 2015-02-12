@@ -1,4 +1,4 @@
-define(["require", "exports", "AjaxHandler", "page"], function(require, exports, AjaxHandler, Page) {
+define(["require", "exports", "AjaxHandler", "page"], function (require, exports, AjaxHandler, Page) {
     function ReloadDisqus(url) {
         DISQUS.reset({
             reload: true,
@@ -8,15 +8,12 @@ define(["require", "exports", "AjaxHandler", "page"], function(require, exports,
         });
     }
     ;
-
     function ReloadDisqusCommentCount() {
         DISQUSWIDGETS = undefined;
         $.getScript("http://yantrio.disqus.com/count.js");
     }
-
     var Handler = new AjaxHandler();
     var destination = document.getElementById("content-destination");
-
     Page("/", function (ctx) {
         Handler.AjaxCall("/Posts/0/10", 'text/html', 'POST', function (response) {
             destination.innerHTML = response.response;
@@ -31,14 +28,13 @@ define(["require", "exports", "AjaxHandler", "page"], function(require, exports,
             ReloadDisqus(window.location.href);
         });
     });
-
     Page("*", function (ctx) {
         location.href = "/";
     });
-
     Page.start({
         click: true,
         popstate: true,
         dispatch: true
     });
 });
+//# sourceMappingURL=app.js.map

@@ -1,7 +1,7 @@
 ﻿---
 author: James Humphries
 categories: testing
-title: Test Title! 
+title: Post Number 1
 created: 25/07/2014 07:00:00 GMT
 ---
 ---excerpt
